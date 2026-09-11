@@ -42,6 +42,15 @@ body:not(.block_ai_chat_replacehelp).hasstickyfooter #ai_chat_button {
     bottom: calc(40px + 1rem + calc(max(80px, calc(0.9375rem * 3))));
 }
 
+// When the Boost Union theme shows its back-to-top button in the bottom right
+// corner (it is unhidden by JS once the user scrolls down), slide the AI chat
+// button upwards so that the two do not overlap each other. Using a transform
+// keeps this independent from the various bottom positions calculated above,
+// and the existing transition on #ai_chat_button animates the movement.
+body:has(#boost-union-footer-buttons #back-to-top[style*="display: inline-block"]) #ai_chat_button {
+    transform: translateY(-2rem);
+}
+
 .block_ai_chat-aicontext_cell {
     max-height: 200px;
     overflow-y: auto;

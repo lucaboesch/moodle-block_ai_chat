@@ -35,6 +35,10 @@ body:not(.block_ai_chat_replacehelp).hasstickyfooter #ai_chat_button {
   bottom: calc(40px + 1rem + max(80px, 2.8125rem));
 }
 
+body:has(#boost-union-footer-buttons #back-to-top[style*="display: inline-block"]) #ai_chat_button {
+  transform: translateY(-2rem);
+}
+
 .block_ai_chat-aicontext_cell {
   max-height: 200px;
   overflow-y: auto;
